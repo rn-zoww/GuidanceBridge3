@@ -1,0 +1,17 @@
+# Only the site (index.html) and the chat function (api/) need to go online.
+# Never upload secrets; set GROQ_API_KEY in the Vercel dashboard instead.
+.env
+.env.local
+*.env
+
+# Local-only server and helpers
+server.js
+server.log
+server.pid
+autostart/
+
+# Planning and reference material
+Ignore/
+instructions*.md
+reference-*.html
+assets/

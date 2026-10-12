@@ -126,6 +126,9 @@ section.block{padding:84px 0}
 .hm-head p{color:var(--muted);margin:0}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 @media(max-width:800px){.grid3{grid-template-columns:1fr;gap:16px}}
+.grid4{grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:1080px){.grid4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grid4{grid-template-columns:1fr;gap:16px}}
 .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-sm)}
 @media(max-width:600px){.card{padding:22px}}
 .card h3{margin-bottom:.4em}
@@ -192,8 +195,8 @@ footer.site-footer{border-top:1px solid var(--line);background:#fffaf8;padding:5
 label.f,.f{display:block;font-weight:600;font-size:.92rem;margin:0 0 8px}
 .hint{font-size:.84rem;color:var(--muted);font-weight:400;margin-top:4px}
 .opt{color:var(--muted);font-weight:400}
-input[type=text],input[type=password],input[type=date],select,textarea{width:100%;min-width:0;font:inherit;font-size:1rem;padding:13px 16px;border:1px solid #dccaca;border-radius:16px;background:#fff;color:var(--ink);transition:border-color .15s,box-shadow .15s;-webkit-appearance:none;appearance:none}
-input[type=date]{min-height:50px}
+input[type=text],input[type=password],input[type=date],input[type=datetime-local],select,textarea{width:100%;min-width:0;font:inherit;font-size:1rem;padding:13px 16px;border:1px solid #dccaca;border-radius:16px;background:#fff;color:var(--ink);transition:border-color .15s,box-shadow .15s;-webkit-appearance:none;appearance:none}
+input[type=date],input[type=datetime-local]{min-height:50px}
 select{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23800000' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 16px center;padding-right:40px}
 input:focus,select:focus,textarea:focus{border-color:var(--maroon);box-shadow:0 0 0 4px rgba(128,0,0,.1);outline:none}
 textarea{resize:vertical;min-height:110px}
@@ -219,7 +222,7 @@ textarea{resize:vertical;min-height:110px}
 .badge.high{background:var(--maroon);color:#fff}
 .badge.high::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold)}
 .badge.low{background:var(--maroon-tint);color:var(--maroon);border:1px solid var(--maroon-tint-2)}
-.badge.stat{background:#f6f1f1;color:#4a3d40;text-transform:none;letter-spacing:0;font-weight:600;white-space:normal}
+.badge.stat{background:#f6f1f1;color:#4a3d40;text-transform:none;letter-spacing:0;font-weight:600;white-space:normal;padding:4px 11px;border:0;border-radius:999px}
 .badge.ok{background:#eaf6ec;color:#1d5c2a;text-transform:none;letter-spacing:0;font-weight:600}
 .badge.gold{background:#fff;border:1px solid var(--line);color:var(--maroon);text-transform:none;letter-spacing:0;font-size:.85rem}
 .badge.gold::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold)}
@@ -234,7 +237,7 @@ textarea{resize:vertical;min-height:110px}
 .chip{border:1px solid var(--line);background:#fff;color:var(--maroon);border-radius:999px;padding:8px 14px;min-height:38px;font-size:.88rem;font-weight:500;cursor:pointer;transition:background .15s,border-color .15s;text-align:left}
 .chip:hover{background:var(--maroon-tint);border-color:var(--maroon)}
 .chip[disabled]{opacity:.45;cursor:not-allowed}
-.avatar{width:44px;height:44px;border-radius:16px;background:var(--maroon);color:#fff;display:grid;place-items:center;flex:none}
+.avatar{width:56px;height:56px;border-radius:18px;background:var(--maroon-tint-2);overflow:hidden;position:relative;flex:none}
 .status{display:inline-flex;align-items:center;gap:7px;background:var(--maroon-tint);color:var(--maroon);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px;white-space:nowrap}
 .status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(255,215,0,.3)}
 .chat{display:flex;flex-direction:column;height:100%;min-height:0;background:#fff}
@@ -294,7 +297,7 @@ body.full #widget,body.staff #widget{display:none}
   .chat-full .bubble{max-width:88%}
   .chat-full .chat-form{padding:10px 10px 8px}
   .chat-foot{font-size:.7rem;padding:0 12px 8px}
-  .avatar{width:40px;height:40px;border-radius:14px}
+  .avatar{width:48px;height:48px;border-radius:16px}
 }
 @media(max-width:400px){.chat-head small{display:none}}
 
@@ -306,6 +309,7 @@ body.full #widget,body.staff #widget{display:none}
 .panel .min{position:absolute;top:16px;right:14px;border:0;background:var(--maroon-tint);color:var(--maroon);width:36px;height:36px;border-radius:50%;cursor:pointer;display:grid;place-items:center;z-index:2}
 .panel .chat-head{padding-right:58px}
 .panel .chat-head .status{display:none}
+@media(max-width:360px){.panel .chat-head .avatar{display:none}}
 @media(max-width:520px){
   .fab{right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));padding:14px 20px}
   .panel{inset:0;width:auto;height:auto;border-radius:0;border:0;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -347,13 +351,13 @@ body.full #widget,body.staff #widget{display:none}
 .item:hover{border-color:var(--maroon)}
 .item.sel{border-color:var(--maroon);box-shadow:0 0 0 3px rgba(128,0,0,.12)}
 .item.done{opacity:.7}
-.item .top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:6px}
-.item b{font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.item .top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 10px;align-items:center;margin-bottom:6px}
+.item b{flex:1 1 0;font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .item small{color:var(--muted);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .item .top small{flex:none}
 .detail{background:#fff;border:1px solid var(--line);border-radius:28px;padding:28px;min-height:320px;box-shadow:var(--shadow-sm)}
 @media(max-width:600px){.detail{padding:18px;border-radius:22px}}
-.d-back{display:none;margin-bottom:14px}
+.d-back{display:none;margin-bottom:8px;padding:8px 0}
 @media(max-width:900px){.d-back{display:inline-block}}
 .d-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
 .d-head h2{font-size:1.6rem;margin:0;overflow-wrap:anywhere}
@@ -366,11 +370,12 @@ body.full #widget,body.staff #widget{display:none}
 @media(max-width:600px){.msgs{max-height:60dvh}.msgs .bubble{max-width:92%}}
 .reply-form{display:flex;gap:8px;align-items:flex-end;margin-top:8px}
 .reply-form textarea{min-height:56px}
+.reply-form .btn{flex:none;white-space:nowrap}
 @media(max-width:480px){.reply-form{flex-direction:column;align-items:stretch}}
 .d-actions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
 .btn-danger{background:#fff;color:#b00020;border-color:#e3a3ad}
 .btn-danger:hover{background:#b00020;color:#fff;border-color:#b00020}
-@media(max-width:480px){.d-actions .btn{flex:1}}
+@media(max-width:480px){.d-actions .btn{flex:1 1 calc(50% - 5px)}}
 .empty{text-align:center;color:var(--muted);padding:40px 10px}
 
 /* counselor full-page views (one request / one anonymous chat) */
@@ -476,8 +481,7 @@ body.full #progress{display:none}
 }
 .fab::before{content:"";position:absolute;inset:0;border-radius:inherit;animation:fabPulse 2.6s ease-out infinite;pointer-events:none}
 @keyframes fabPulse{0%{box-shadow:0 0 0 0 rgba(128,0,0,.45)}70%,100%{box-shadow:0 0 0 16px rgba(128,0,0,0)}}
-.fab .wave{display:inline-block;animation:wave 3s ease-in-out infinite;transform-origin:70% 70%}
-@keyframes wave{0%,60%,100%{transform:rotate(0)}10%,30%{transform:rotate(14deg)}20%,40%{transform:rotate(-8deg)}}
+.fab-face{width:36px;height:36px;margin:-8px 0 -8px -12px;border-radius:12px;background:#fff;overflow:hidden;position:relative;flex:none}
 
 /* promotional videos */
 .hm-videos{background:linear-gradient(180deg,#fff,#fff8f0)}
@@ -516,21 +520,50 @@ body.full #progress{display:none}
 @media(max-width:480px){.play{width:60px;height:60px;margin:-30px 0 0 -30px}.play::before{left:24px;top:18px;border-width:12px 0 12px 18px}.vid-main{border-radius:18px}.vid-cap{left:14px;right:14px;bottom:12px}}
 
 /* breathing exercise */
-.breathe-sec{background:radial-gradient(ellipse at 15% 30%,#fff3c4 0,transparent 45%),#fff}
+.breathe-sec{background:radial-gradient(ellipse at 15% 30%,#fff3c4 0,transparent 45%),#fff;overflow:clip}
 .breathe-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
 .breathe{display:grid;place-items:center}
 .br-ring{position:relative;width:min(300px,78vw);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#fff 58%,var(--maroon-tint) 59%)}
 .br-ring::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px dashed #e9c95a;animation:spin 40s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.br-core{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#a32020,var(--maroon) 60%,var(--maroon-dark));box-shadow:0 20px 50px -18px rgba(128,0,0,.7),0 0 0 14px rgba(128,0,0,.06);transform:scale(.62);transition:transform 4s ease-in-out}
+.br-core{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#a32020,var(--maroon) 60%,var(--maroon-dark));box-shadow:0 20px 50px -18px rgba(128,0,0,.7),0 0 0 14px rgba(128,0,0,.06);transform:scale(.7);transition:transform 4s ease-in-out}
 .br-core.idle{animation:breatheIdle 6s ease-in-out infinite}
 .br-core.in,.br-core.hold{transform:scale(1)}
-.br-core.out{transform:scale(.62)}
-@keyframes breatheIdle{0%,100%{transform:scale(.62)}50%{transform:scale(.72)}}
-.br-label{position:relative;z-index:1;text-align:center;color:#fff;pointer-events:none;padding:0 20px}
-.br-label b{display:block;font-family:var(--font-head);font-size:1.45rem;font-weight:600;line-height:1.2}
-.br-label small{font-size:.8rem;opacity:.85}
+.br-core.out{transform:scale(.7)}
+@keyframes breatheIdle{0%,100%{transform:scale(.7)}50%{transform:scale(.78)}}
+/* the label must fit inside the circle at its smallest (70% of the core, about half the ring), so it is
+   kept to 44% of the ring and its type shrinks with the ring on narrow phones */
+.br-label{position:relative;z-index:1;width:44%;text-align:center;color:#fff;pointer-events:none;text-wrap:balance}
+.br-label b{display:block;font-family:var(--font-head);font-size:min(1.15rem,4.8vw);font-weight:600;line-height:1.2}
+.br-label small{display:block;margin-top:3px;font-size:min(.75rem,3.4vw);line-height:1.3;opacity:.9}
 @media(max-width:800px){.breathe-grid{grid-template-columns:1fr;gap:28px;text-align:center}.breathe-grid .btn{width:100%;max-width:320px}}
+
+/* private journal / evidence locker */
+.j-head{display:flex;gap:12px 16px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:8px}
+.j-head h1{margin:0}
+.j-facts{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:12px}
+.j-facts li{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;line-height:1.5;color:#4a3d40}
+.j-facts .ci{flex:none;width:34px;height:34px;border-radius:11px;background:var(--maroon-tint);color:var(--maroon);display:grid;place-items:center}
+.j-pick{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.j-pick .hint{margin:0;flex:1 1 180px;overflow-wrap:anywhere}
+.j-pick input:focus-visible+label{outline:3px solid rgba(128,0,0,.35);outline-offset:2px}
+.j-preview{flex:1 1 100%;display:flex;align-items:center;gap:12px}
+.j-preview img{width:72px;height:72px;object-fit:cover;border-radius:14px;border:1px solid var(--line);flex:none}
+.j-list{display:grid;gap:16px;margin-top:32px}
+.j-list>h2{font-size:1.5rem;margin:0}
+.j-entry{min-width:0}
+.j-top{display:flex;gap:8px 12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.j-top h3{margin:0;font-size:1.25rem;min-width:0;overflow-wrap:anywhere}
+.j-when{margin:6px 0 14px;font-size:.85rem;color:var(--muted)}
+.j-text{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65}
+.j-img{display:block;max-width:100%;max-height:320px;margin-top:14px;border-radius:14px;border:1px solid var(--line);cursor:zoom-in}
+.j-img.big{max-height:none;cursor:zoom-out}
+/* a journal entry the student shared, shown inside a chat bubble (student and counselor views) */
+.j-att{display:block;margin-top:8px;padding:12px 14px;border-radius:14px;background:#fff;border:1px solid var(--line);color:var(--ink);white-space:normal}
+.j-att b{display:block;color:var(--maroon);line-height:1.3;overflow-wrap:anywhere}
+.j-att small{display:block;color:var(--muted);font-size:.76rem;line-height:1.4;margin:2px 0 8px}
+.j-att .j-text{display:block;font-size:.94rem;line-height:1.55}
+.j-att img{display:block;max-width:100%;max-height:360px;margin-top:10px;border-radius:10px;border:1px solid var(--line)}
 
 /* hamburger morphs into an X when the menu opens */
 .hb{position:relative;display:block;width:20px;height:14px}
@@ -567,6 +600,126 @@ html{scroll-behavior:smooth}
 .status.busy::before{animation-duration:.9s}
 .avatar.busy{animation:avatarPulse 1.2s ease-in-out infinite}
 @keyframes avatarPulse{0%,100%{box-shadow:0 0 0 0 rgba(128,0,0,.35)}50%{box-shadow:0 0 0 7px rgba(128,0,0,0)}}
+
+/* assistant mascot: one inline SVG holds every expression; the wrapper's data-mood picks which parts show */
+.mascot{display:inline-block;line-height:0;pointer-events:none;user-select:none;-webkit-user-select:none}
+.mascot svg{display:block;width:100%;height:auto;overflow:visible}
+.m-b{fill:#9a1f30;stroke:#55101a;stroke-width:3;stroke-linejoin:round}
+.m-g{fill:#ffd83b;stroke:#c98a00;stroke-width:3;stroke-linejoin:round}
+.m-gd{fill:#e9ae0c;stroke:#c98a00;stroke-width:3;stroke-linejoin:round}
+.m-pages{fill:#fff4d9;stroke:#55101a;stroke-width:3}
+.m-pageline{fill:none;stroke:#d9bf85;stroke-width:1.3;stroke-linecap:round}
+.m-spine{fill:none;stroke:#74141f;stroke-width:3;stroke-linecap:round}
+.m-stripe{fill:none;stroke:#ffd83b;stroke-width:6}
+.m-shoe{fill:#74141f;stroke:#55101a;stroke-width:3}
+.m-shadow{fill:#3c0a0a;opacity:.13}
+.m-cheek{fill:#ff9aa5;opacity:.5}
+.m-brow path,.m-line{fill:none;stroke:#1f0609;stroke-width:6;stroke-linecap:round}
+.m-line{stroke-width:5.5}
+.m-lens{fill:#fff;stroke:#f5a300;stroke-width:6}
+.m-rim{fill:none;stroke:#f5a300;stroke-width:5;stroke-linecap:round}
+.m-iris{fill:#2b6fd6}.m-pupil{fill:#131c33}.m-glint{fill:#fff}
+.m-shut path{fill:none;stroke:#131c33;stroke-width:5;stroke-linecap:round}
+.m-mo-fill{fill:#3a0810;stroke:#1f0609;stroke-width:3;stroke-linejoin:round}
+.m-tongue{fill:#f0524f}
+.m-banner rect{fill:#c22a3c;stroke:#55101a;stroke-width:1.5}
+.m-banner text{font:700 12.5px var(--font-body);letter-spacing:.6px}
+.m-medal{fill:#fff8e1;stroke:#c98a00;stroke-width:2.5}
+.m-star,.m-btn{fill:#9a1f30}
+.m-cord,.m-tuft{fill:none;stroke:#9a1f30;stroke-width:3;stroke-linecap:round}
+.m-tuft{stroke-width:7}
+.m-arm-o{fill:none;stroke:#55101a;stroke-width:19;stroke-linecap:round}
+.m-arm-i{fill:none;stroke:#9a1f30;stroke-width:13;stroke-linecap:round}
+.m-heart{fill:#ff6f91;stroke:#fff;stroke-width:2;stroke-linejoin:round}
+.m-spark{fill:#f5a300}
+.m-dot{fill:#cfa9ae}
+/* poses (transform origins are SVG user units: shoulders, brow centres, feet) */
+.m-arm,.m-brow,.m-look,.m-tilt{transition:transform .55s cubic-bezier(.34,1.45,.5,1)}
+.m-arm-l{transform-origin:60px 150px;transform:rotate(24deg)}
+.m-arm-r{transform-origin:184px 150px;transform:rotate(-24deg)}
+.m-brow-l{transform-origin:92px 95px}.m-brow-r{transform-origin:146px 95px}
+.m-tilt{transform-origin:120px 262px}
+.m-mo,.m-fx,.m-shut,.m-eyes,.m-arm-think,.m-arm-r{transition:opacity .25s ease,transform .55s cubic-bezier(.34,1.45,.5,1)}
+.m-mo,.m-fx,.m-shut,.m-arm-think{opacity:0}
+.mascot[data-mood=warm] .m-mo-smile,.mascot[data-mood=goodbye] .m-mo-smile,.mascot[data-mood=relieved] .m-mo-smile,
+.mascot[data-mood=hello] .m-mo-open,.mascot[data-mood=encouraging] .m-mo-open,
+.mascot[data-mood=caring] .m-mo-soft,.mascot[data-mood=listening] .m-mo-soft,
+.mascot[data-mood=concerned] .m-mo-worry,.mascot[data-mood=thinking] .m-mo-think{opacity:1}
+.mascot[data-mood=hello] .m-arm-l,.mascot[data-mood=goodbye] .m-arm-l{transform:rotate(152deg)}
+.mascot[data-mood=hello] .m-brow,.mascot[data-mood=encouraging] .m-brow{transform:translateY(-3px)}
+.mascot[data-mood=listening] .m-brow{transform:translateY(-4px)}
+.mascot[data-mood=listening] .m-look{transform:translate(2px,4px)}
+.mascot[data-mood=listening] .m-tilt{transform:rotate(4deg)}
+.mascot[data-mood=thinking] .m-brow-l{transform:translateY(2px) rotate(5deg)}
+.mascot[data-mood=thinking] .m-brow-r{transform:translateY(-5px) rotate(-8deg)}
+.mascot[data-mood=thinking] .m-look{transform:translate(5px,-6px)}
+.mascot[data-mood=thinking] .m-tilt{transform:rotate(-3deg)}
+.mascot[data-mood=thinking] .m-arm-r{opacity:0}
+.mascot[data-mood=thinking] .m-arm-think,.mascot[data-mood=thinking] .m-fx-dots,
+.mascot[data-mood=caring] .m-fx-heart,.mascot[data-mood=encouraging] .m-fx-spark{opacity:1}
+.mascot[data-mood=caring] .m-brow-l{transform:translateY(-1px) rotate(-13deg)}
+.mascot[data-mood=caring] .m-brow-r{transform:translateY(-1px) rotate(13deg)}
+.mascot[data-mood=caring] .m-look{transform:translateY(1.5px)}
+.mascot[data-mood=caring] .m-arm-l{transform:rotate(62deg)}
+.mascot[data-mood=caring] .m-arm-r{transform:rotate(-62deg)}
+.mascot[data-mood=concerned] .m-brow-l{transform:translateY(1px) rotate(-20deg)}
+.mascot[data-mood=concerned] .m-brow-r{transform:translateY(1px) rotate(20deg)}
+.mascot[data-mood=concerned] .m-look{transform:translateY(1px)}
+.mascot[data-mood=concerned] .m-arm-l{transform:rotate(14deg)}
+.mascot[data-mood=concerned] .m-arm-r{transform:rotate(-14deg)}
+.mascot[data-mood=encouraging] .m-arm-l{transform:rotate(148deg)}
+.mascot[data-mood=encouraging] .m-arm-r{transform:rotate(-148deg)}
+.mascot[data-mood=relieved] .m-brow-l{transform:translateY(-2px) rotate(-7deg)}
+.mascot[data-mood=relieved] .m-brow-r{transform:translateY(-2px) rotate(7deg)}
+.mascot[data-mood=relieved] .m-eyes{opacity:0}
+.mascot[data-mood=relieved] .m-shut{opacity:1}
+/* life: float, blink and tassel swing, plus a few mood-only motions. A worried mascot holds still. */
+.m-float{animation:mFloat 4.2s ease-in-out infinite}
+.m-shadow{transform-origin:121px 277px;animation:mShadow 4.2s ease-in-out infinite}
+.m-eye{animation:mBlink 5.2s infinite}
+.m-eye-l{transform-origin:92px 128px}.m-eye-r{transform-origin:146px 128px}
+.m-hang{transform-origin:172px 39px;animation:mSwing 4.2s ease-in-out infinite}
+.m-mouth{transform-origin:119px 172px}
+.m-fx>*{transform-box:fill-box;transform-origin:center}
+.mascot.talking .m-mouth{animation:mTalk .34s ease-in-out infinite alternate}
+.mascot[data-mood=hello] .m-arm-l{animation:mWave 1.1s ease-in-out 3}
+.mascot[data-mood=goodbye] .m-arm-l{animation:mWave 1.5s ease-in-out 4}
+.mascot[data-mood=encouraging] .m-float{animation:mHop .5s ease 2,mFloat 4.2s ease-in-out 1s infinite}
+.mascot[data-mood=encouraging] .m-spark{animation:mTwinkle 1.5s ease-in-out infinite}
+.mascot[data-mood=encouraging] .m-spark:nth-child(2){animation-delay:.4s}
+.mascot[data-mood=encouraging] .m-spark:nth-child(3){animation-delay:.8s}
+.mascot[data-mood=caring] .m-heart{animation:mBeat 1.3s ease-in-out infinite}
+.mascot[data-mood=caring] .m-heart:nth-child(2){animation-delay:.35s}
+.mascot[data-mood=thinking] .m-dot{animation:blink 1.2s infinite}
+.mascot[data-mood=thinking] .m-dot:nth-child(2){animation-delay:.2s}
+.mascot[data-mood=thinking] .m-dot:nth-child(3){animation-delay:.4s}
+.mascot[data-mood=concerned] .m-float,.mascot[data-mood=concerned] .m-shadow{animation:none}
+@keyframes mFloat{50%{transform:translateY(-4px)}}
+@keyframes mShadow{50%{transform:scaleX(.92)}}
+@keyframes mBlink{0%,93%,100%{transform:scaleY(1)}96%{transform:scaleY(.08)}}
+@keyframes mSwing{0%,100%{transform:rotate(5deg)}50%{transform:rotate(-5deg)}}
+@keyframes mTalk{to{transform:scaleY(.55)}}
+@keyframes mWave{0%,100%{transform:rotate(140deg)}50%{transform:rotate(166deg)}}
+@keyframes mHop{50%{transform:translateY(-12px)}}
+@keyframes mTwinkle{0%,100%{transform:scale(.55);opacity:.5}50%{transform:scale(1.1);opacity:1}}
+@keyframes mBeat{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+/* where it appears: head and shoulders in the chat header, on the floating button and peeking over the newest
+   reply; full body beside the full-page chat on wide screens (where the smaller ones in that chat are hidden) */
+.avatar .mascot,.fab-face .mascot,.feel-face .mascot{position:absolute;width:125%;left:-12.5%;top:-4.2%}
+.panel .avatar{width:48px;height:48px;border-radius:16px}
+.feel{display:flex;align-items:flex-end;gap:10px;align-self:flex-start;flex:none;margin:4px 0 -12px 14px}
+.feel-face{width:68px;height:66px;position:relative;flex:none;clip-path:inset(-30px -30px 0 -30px)}
+.feel-say{margin-bottom:12px;padding:3px 11px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:.78rem;font-weight:600;line-height:1.5;color:var(--maroon);white-space:nowrap}
+.chat .feel.new{animation:pop .35s ease both}
+.stage{display:none}
+@media(min-width:1180px){
+  .stage{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:16px;width:260px;flex:none;padding:24px 20px 36px}
+  .stage .mascot{width:190px}
+  .stage-say{position:relative;max-width:100%;background:#fff;border:1px solid var(--line);border-radius:18px;padding:10px 16px;font-size:.92rem;font-weight:600;line-height:1.3;color:var(--maroon);text-align:center;box-shadow:var(--shadow-sm)}
+  .stage-say::after{content:"";position:absolute;left:50%;bottom:-7px;width:12px;height:12px;background:#fff;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transform:translateX(-50%) rotate(45deg)}
+  .stage-say.new{animation:pop .35s ease both}
+  .chat-full .avatar,.chat-full .feel{display:none}
+}
 
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1}.hm-hero h1 em{background-size:100% 100%}}
 </style>
@@ -605,6 +758,7 @@ const app = $('#app');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const md = t => esc(t).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
 const fmt = t => t ? new Date(t).toLocaleString([], {month:'short', day:'numeric', hour:'numeric', minute:'2-digit'}) : '';
+const fmtFull = t => t ? new Date(t).toLocaleString([], {dateStyle:'medium', timeStyle:'short'}) : '';
 const box = get => { const mem = {}; return {
   get(k){ try { return get().getItem(k); } catch(e){ return k in mem ? mem[k] : null; } },
   set(k, v){ try { get().setItem(k, v); } catch(e){ mem[k] = String(v); } },
@@ -632,11 +786,13 @@ const ICON = {
   check: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#800000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" stroke-width="1.6"/><path d="M8 12.5l3 3 5-6"/></svg>',
   menu: '<span class="hb" aria-hidden="true"><i></i><i></i><i></i></span>',
   min: svg('<path d="M6 12h12"/>', 18),
-  bot: svg('<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01" stroke-width="2.6"/>', 22),
   pin: svg('<path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>'),
   phone: svg('<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/>'),
   mail: svg('<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.5 7l8.5 6 8.5-6"/>'),
-  globe: svg('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>')
+  globe: svg('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>'),
+  lock: svg('<rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>'),
+  clock: svg('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'),
+  share: svg('<path d="M4 12v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6M12 15V4M8 8l4-4 4 4"/>')
 };
 // Official University of Perpetual Help System DALTA seal (embedded in CONFIG.LOGO_SRC).
 const LOGO = (h = 48, alt = '') => `<img src="${CONFIG.LOGO_SRC}" alt="${esc(alt)}" height="${h}" width="${Math.round(h * 209 / 300)}">`;
@@ -751,8 +907,50 @@ function seedDemo(studentPw){
   ]);
 }
 
+/* ============================ ASSISTANT MASCOT ============================ */
+// The assistant's face: a walking book with a gold graduation cap and round glasses, drawn inline so the
+// page still needs no assets folder. Every expression is in this one drawing; the CSS shows the right
+// brows, eyes, mouth and arms from the wrapper's data-mood.
+const MASCOT_SVG = `<svg viewBox="0 0 240 290" focusable="false">
+<ellipse class="m-shadow" cx="121" cy="277" rx="60" ry="7"/>
+<g class="m-tilt"><g class="m-float">
+<rect class="m-b" x="83" y="216" width="22" height="46" rx="5"/><path class="m-stripe" d="M84.5 237h19M84.5 249h19"/><ellipse class="m-shoe" cx="90" cy="266" rx="18" ry="9"/>
+<rect class="m-b" x="137" y="216" width="22" height="46" rx="5"/><path class="m-stripe" d="M138.5 237h19M138.5 249h19"/><ellipse class="m-shoe" cx="152" cy="266" rx="18" ry="9"/>
+<g class="m-arm m-arm-l"><rect class="m-b" x="52" y="146" width="16" height="48" rx="8"/><circle class="m-b" cx="60" cy="197" r="11"/></g>
+<g class="m-arm m-arm-r"><rect class="m-b" x="176" y="146" width="16" height="48" rx="8"/><circle class="m-b" cx="184" cy="197" r="11"/></g>
+<rect class="m-pages" x="56" y="76" width="138" height="150" rx="13"/><path class="m-pageline" d="M191 92v118M184 223H72"/>
+<rect class="m-b" x="50" y="70" width="138" height="150" rx="13"/><path class="m-spine" d="M64 74v142"/>
+<ellipse class="m-cheek" cx="72" cy="160" rx="9" ry="6"/><ellipse class="m-cheek" cx="166" cy="160" rx="9" ry="6"/>
+<g class="m-brow m-brow-l"><path d="M76 97q16-9 32 0"/></g><g class="m-brow m-brow-r"><path d="M130 97q16-9 32 0"/></g>
+<path class="m-rim" d="M114 126q5-6 10 0"/><circle class="m-lens" cx="92" cy="128" r="22"/><circle class="m-lens" cx="146" cy="128" r="22"/>
+<g class="m-eyes"><g class="m-look">
+<g class="m-eye m-eye-l"><circle class="m-iris" cx="92" cy="128" r="11"/><circle class="m-pupil" cx="92" cy="128" r="5.5"/><circle class="m-glint" cx="88" cy="124" r="3"/><circle class="m-glint" cx="96.5" cy="132" r="1.6"/></g>
+<g class="m-eye m-eye-r"><circle class="m-iris" cx="146" cy="128" r="11"/><circle class="m-pupil" cx="146" cy="128" r="5.5"/><circle class="m-glint" cx="142" cy="124" r="3"/><circle class="m-glint" cx="150.5" cy="132" r="1.6"/></g>
+</g></g>
+<g class="m-shut"><path d="M81 132q11-12 22 0"/><path d="M135 132q11-12 22 0"/></g>
+<g class="m-mouth">
+<g class="m-mo m-mo-open"><path class="m-mo-fill" d="M97 162q22 8 44 0q-2 26-22 26t-22-26z"/><ellipse class="m-tongue" cx="119" cy="180.5" rx="10" ry="5"/></g>
+<path class="m-mo m-mo-smile m-line" d="M101 166q18 20 36 0"/>
+<path class="m-mo m-mo-soft m-line" d="M107 170q12 10 24 0"/>
+<path class="m-mo m-mo-worry m-line" d="M107 178q12-9 24 0"/>
+<path class="m-mo m-mo-think m-line" d="M104 175q9-5 20 0"/>
+</g>
+<g class="m-banner"><rect x="64" y="194" width="110" height="19" rx="4"/><text x="119" y="208" text-anchor="middle"><tspan fill="#ffe14d">A</tspan><tspan fill="#fff">-</tspan><tspan fill="#a6f08c">BA</tspan><tspan fill="#fff">-</tspan><tspan fill="#8fdcff">KA</tspan><tspan fill="#fff">-</tspan><tspan fill="#ffb347">DA</tspan></text></g>
+<rect class="m-g" x="88" y="40" width="62" height="34" rx="6"/>
+<path class="m-gd" d="M40 32l79 20 79-20v6l-79 20-79-20z"/><path class="m-g" d="M119 10l79 22-79 20-79-20z"/>
+<path class="m-cord" d="M119 31l53 8"/><g class="m-hang"><path class="m-cord" d="M172 39v17"/><path class="m-tuft" d="M172 57v9"/></g><circle class="m-btn" cx="119" cy="31" r="4"/>
+<circle class="m-medal" cx="119" cy="65" r="8.5"/><path class="m-star" d="M119 59.5l1.35 3.64 3.88.16-3.04 2.41 1.04 3.74L119 67.3l-3.23 2.15 1.04-3.74-3.04-2.41 3.88-.16z"/>
+<g class="m-arm-think"><path class="m-arm-o" d="M197 155l-41 24"/><path class="m-arm-i" d="M197 155l-41 24"/><circle class="m-b" cx="153" cy="181" r="11"/></g>
+<g class="m-fx m-fx-heart"><path class="m-heart" d="M208 114c-10-7-12-12-12-15.5a6 6 0 0 1 12-2.5a6 6 0 0 1 12 2.5c0 3.5-2 8.5-12 15.5z"/><path class="m-heart" d="M28 104c-6-4.2-7.5-7.5-7.5-9.5a3.75 3.75 0 0 1 7.5-1.5a3.75 3.75 0 0 1 7.5 1.5c0 2-1.5 5.3-7.5 9.5z"/></g>
+<g class="m-fx m-fx-spark"><path class="m-spark" d="M26 56Q26 66 36 66Q26 66 26 76Q26 66 16 66Q26 66 26 56z"/><path class="m-spark" d="M216 54Q216 62 224 62Q216 62 216 70Q216 62 208 62Q216 62 216 54z"/><path class="m-spark" d="M224 142Q224 148 230 148Q224 148 224 154Q224 148 218 148Q224 148 224 142z"/></g>
+<g class="m-fx m-fx-dots"><circle class="m-dot" cx="204" cy="112" r="4"/><circle class="m-dot" cx="212" cy="96" r="5.5"/><circle class="m-dot" cx="222" cy="76" r="7"/></g>
+</g></g></svg>`;
+const mascot = (mood = 'warm') => `<span class="mascot" data-mood="${mood}" aria-hidden="true">${MASCOT_SVG}</span>`;
+// The short line shown with each mood (header status pill, and the caption above the full-page mascot).
+const MOOD_SAY = {hello:"Hi, I'm here for you", warm:'Here to listen', listening:"I'm listening", thinking:'Thinking…', caring:"I'm here with you", concerned:'Your safety comes first', encouraging:"You've got this", relieved:'Glad to hear that', goodbye:'Take care'};
+
 /* ============================ AI CHATBOT (shared by chat page and floating widget) ============================ */
-const GREET = "Hi! I'm the GuidanceBridge Assistant, an AI helper for UPHSD students dealing with bullying or peer pressure.\n\nI can share quick coping steps and help you reach a guidance counselor when you're ready. I'm not a counselor, and I won't judge or accuse anyone. You don't need to share any names.\n\nWhat's going on today?";
+const GREET ="Hi! I'm the GuidanceBridge Assistant, an AI helper for UPHSD students dealing with bullying or peer pressure.\n\nI can share quick coping steps and help you reach a guidance counselor when you're ready. I'm not a counselor, and I won't judge or accuse anyone. You don't need to share any names.\n\nWhat's going on today?";
 const intro = () => ({r:'b', t:GREET, intro:1});
 function signoffText(){
   const hi = sev === 'HIGH', talked = msgs.some(m => m.r === 'u');
@@ -771,6 +969,42 @@ const chatViews = new Set();
 const saveChat = () => SS.set('gb_chat', JSON.stringify({msgs, sev, peak, ended}));
 const drawChats = () => chatViews.forEach(f => f());
 
+/* Mascot mood. The AI tags each reply with the feeling it was written in (the MOOD line, see chat-core.js)
+   and the mascot shows that feeling. It also reacts on its own while the student types or waits for a reply. */
+const MOOD_TAGS = {WARM:'warm', CARING:'caring', CONCERNED:'concerned', ENCOURAGING:'encouraging', RELIEVED:'relieved'};
+const MOOD_LINE = /^[ \t|,;-]*MOOD:[ \t]*([a-z]+)\.?[ \t]*$/im;
+const HURT = /bull(y|ied|ies|ying)|teas(e|ed|es|ing)|left out|exclud|ignor|\balone\b|lonely|\bsad\b|\bcr(y|ied|ying)\b|scared|afraid|anxious|nervous|worried|hurt|\bhate|embarrass|asham|humiliat|laugh(s|ed|ing)? at|(make|made|makes|making) fun|pick(s|ed|ing)? on|pressur|forc(e|ed|ing)|rumou?r|gossip|upset|stress|depress|hopeless|worthless|mock|insult|harass|can'?t take/i;
+const BETTER = /\b(i'?m|i am|im)\s+(ok|okay|alright|fine|safe|good|better)\b|\bfeel(s|ing)?\s+(a lot |much |a bit |a little |so much )?(better|safer|calmer|okay|ok)\b/i;
+const NOT = /\b(not|don'?t|doesn'?t|didn'?t|never|can'?t|won'?t|no longer)\b/i;
+const PRAISE = /proud of you|brave|courage|well done|(great|good|big|important) (job|step)|did the right thing|glad you/i;
+const SORRY = /sorry|not your fault|sounds (really |so |very )?(hard|heavy|tough|painful|difficult)/i;
+// Used when a reply has no mood tag (built-in tips, or the AI left the line out).
+function guessMood(said, reply){
+  if (BETTER.test(said) && !NOT.test(said)) return 'relieved';
+  if (PRAISE.test(reply)) return 'encouraging';
+  return HURT.test(said) || SORRY.test(reply) ? 'caring' : 'warm';
+}
+// A HIGH priority conversation never gets a cheerful face, whatever the tag says.
+const fitMood = mood => sev === 'HIGH' && mood !== 'caring' ? 'concerned' : mood;
+// The mascot's reaction the moment a message is sent, before the reply arrives.
+const firstLook = t => HI.test(t) && !OKAY.test(t) ? 'concerned' : HURT.test(t) ? 'caring' : 'thinking';
+let waitMood = 'thinking', listening = false, hearT = 0;
+function mascotMood(){
+  if (busy) return waitMood;
+  if (ended) return sev === 'HIGH' ? 'caring' : 'goodbye';
+  if (listening && sev !== 'HIGH') return 'listening';
+  const last = msgs[msgs.length - 1];
+  return !last || last.intro ? 'hello' : fitMood(last.mood || 'warm');
+}
+const mascotViews = new Set();
+const syncMascots = () => mascotViews.forEach(f => f());
+// The mascot leans in while the student is typing, and settles back after a short pause.
+function hear(on){
+  clearTimeout(hearT);
+  if (on) hearT = setTimeout(() => hear(false), 2500);
+  if (listening !== on) { listening = on; syncMascots(); }
+}
+
 const local = t => `SEVERITY: ${HI.test(t) ? 'HIGH' : 'LOW'}\nThank you for telling me. That sounds hard, and it is not your fault. For right now:\n1. Move to a place where you feel safe, close to a trusted person.\n2. Breathe in for 4, hold for 4, out for 6. Repeat a few times.\n3. Keep screenshots or notes of what happened. Please don't reply in anger or get back at anyone.\n4. Tell someone you trust.\nA counselor can help from here. Would you like a face-to-face appointment or an anonymous private chat with a counselor?`;
 
 async function ask(){
@@ -785,7 +1019,8 @@ async function ask(){
 
 async function send(text){
   const t = (text || '').trim(); if (!t || busy || ended) return;
-  msgs.push({r:'u', t}); busy = true; saveChat(); drawChats();
+  hear(false);
+  msgs.push({r:'u', t}); busy = true; waitMood = firstLook(t); saveChat(); drawChats();
   let r, fb = '';
   try { r = await ask(); } catch(e){ fb = (e && e.message) || 'unknown error'; r = local(t); }
   const m = /SEVERITY:\s*(HIGH|LOW)/i.exec(r);
@@ -793,24 +1028,27 @@ async function send(text){
   if (HI.test(t) && !OKAY.test(t)) sev = 'HIGH';
   if (sev === 'HIGH') peak = 'HIGH';
   r = r.replace(/SEVERITY:\s*(HIGH|LOW)\s*/i, '').trim();
+  const tag = MOOD_LINE.exec(r);
+  r = r.replace(MOOD_LINE, '').trim();
+  const mood = fitMood(tag && MOOD_TAGS[tag[1].toUpperCase()] || guessMood(t, r));
   if (fb && sev === 'HIGH') r += "\n\nThis sounds serious, so I've marked it high priority for a human counselor. If you are in danger right now, tell a trusted adult, call 911, or call the NCMH Crisis Hotline at 1553.";
-  busy = false; msgs.push({r:'b', t:r, fb}); saveChat(); drawChats();
+  busy = false; msgs.push({r:'b', t:r, fb, mood}); saveChat(); drawChats();
 }
 // User closes the conversation: the assistant signs off and the input locks until a new chat starts.
 function endChat(){ if (busy || ended) return; msgs.push({r:'b', t:signoffText(), signoff:1}); ended = true; saveChat(); drawChats(); }
 // A new chat always starts with the assistant introducing itself again.
 function newChat(){
   if (busy) return;
-  msgs = []; sev = null; peak = null; ended = false; busy = true; drawChats();
+  msgs = []; sev = null; peak = null; ended = false; busy = true; waitMood = 'warm'; drawChats();
   setTimeout(() => { msgs = [intro()]; busy = false; saveChat(); drawChats(); }, 650);
 }
 
 const STARTERS = ['Someone keeps teasing me', "I'm being left out", "I'm pressured to do things I don't want", "I'm being bullied online"];
 function mountChat(root, id, full){
-  root.innerHTML = `
+  root.innerHTML = `${full ? `<aside class="stage" aria-hidden="true"><div class="stage-say"></div>${mascot()}</aside>` : ''}
     <div class="chat${full ? ' chat-full' : ''}">
       <div class="chat-head">
-        <div class="avatar" aria-hidden="true">${ICON.bot}</div>
+        <div class="avatar" aria-hidden="true">${mascot()}</div>
         <div class="who"><b>GuidanceBridge Assistant</b><small>An AI helper, not a counselor. No names needed.</small></div>
         <span class="status">Here to listen</span>
         <button class="chip end" type="button" data-act="end">End chat</button>
@@ -824,13 +1062,23 @@ function mountChat(root, id, full){
       <div class="chat-foot">AI coping support only. Not therapy, and not a replacement for a counselor.</div>
     </div>`;
   const body = $('.chat-body', root), form = $('form', root), ta = $('textarea', root), sendBtn = $('.send', root), endBtn = $('.end', root);
-  const statusEl = $('.status', root), avatarEl = $('.avatar', root);
+  const statusEl = $('.status', root), avatarEl = $('.avatar', root), sayEl = $('.stage-say', root);
+  const faces = () => $$('.mascot', root);
   let seen = msgs.length;
+  // Puts the current mood on this view's mascots and captions. The mouth moves while a reply is typed out.
+  function showMood(){
+    const m = mascotMood(), say = MOOD_SAY[m];
+    faces().forEach(f => { f.dataset.mood = m; });
+    $$('.feel-say', body).forEach(c => { c.textContent = say; });
+    statusEl.textContent = busy ? 'Typing…' : say;
+    if (sayEl && sayEl.textContent !== say) { sayEl.textContent = say; sayEl.classList.remove('new'); void sayEl.offsetWidth; sayEl.classList.add('new'); }
+  }
+  const talk = on => faces().forEach(f => f.classList.toggle('talking', on));
   // Types a new assistant reply out character by character, then swaps in the formatted text
   // and fades in anything that was held back until the reply finished (handoff card, crisis bar, captions).
   function typeOut(el, full, html){
     const total = full.length, dur = Math.min(2800, 16 * total + 250), t0 = performance.now();
-    const finish = () => { el.innerHTML = html; el.closest('.bubble').classList.remove('streaming'); $$('.later', body).forEach(x => x.classList.add('show')); body.scrollTop = body.scrollHeight; };
+    const finish = () => { el.innerHTML = html; el.closest('.bubble').classList.remove('streaming'); talk(false); $$('.later', body).forEach(x => x.classList.add('show')); body.scrollTop = body.scrollHeight; };
     const tick = now => {
       if (!el.isConnected) return;                     // a newer redraw replaced this bubble
       const n = Math.min(total, Math.ceil(total * (now - t0) / dur));
@@ -846,16 +1094,18 @@ function mountChat(root, id, full){
     const lastMsg = msgs[msgs.length - 1];
     const stream = fresh && !busy && !reduced && lastMsg && lastMsg.r === 'b';
     const later = stream ? ' later' : '';
+    // The mascot peeks over the assistant's newest bubble (or its typing dots), so its face sits beside the words it reacts to.
+    const mood = mascotMood(), feel = `<div class="feel${fresh ? ' new' : ''}" aria-hidden="true"><span class="feel-face">${mascot(mood)}</span><span class="feel-say">${esc(MOOD_SAY[mood])}</span></div>`;
     let h = msgs.map((m, i) => {
       const isLast = i === msgs.length - 1, cls = fresh && isLast ? ' new' : '';
       if (m.r === 'u') return `<div class="bubble me${cls}">${esc(m.t)}</div>`;
       const who = (m.intro || m.signoff) ? '<span class="who-cap">GuidanceBridge Assistant</span>' : '';
       const cap = m.fb ? `<span class="cap${isLast ? later : ''}">Showing built-in tips. The AI service could not be reached (${esc(m.fb)}).</span>` : '';
       const txt = stream && isLast ? '' : (m.signoff ? esc(m.t) : md(m.t));
-      return `${m.signoff ? '<div class="ended-rule">Chat closed</div>' : ''}<div class="bubble them${m.signoff ? ' signoff' : ''}${cls}${stream && isLast ? ' streaming' : ''}">${who}<span class="txt">${txt}</span>${cap}</div>`;
+      return `${m.signoff ? '<div class="ended-rule">Chat closed</div>' : ''}${isLast && !busy ? feel : ''}<div class="bubble them${m.signoff ? ' signoff' : ''}${cls}${stream && isLast ? ' streaming' : ''}">${who}<span class="txt">${txt}</span>${cap}</div>`;
     }).join('');
     if (msgs.length === 1 && !busy && !ended) h += `<div class="chips${later}">${STARTERS.map(x => `<button type="button" class="chip" data-s="${esc(x)}">${esc(x)}</button>`).join('')}</div>`;
-    if (busy) h += '<div class="bubble them typing new" aria-label="Assistant is typing"><i></i><i></i><i></i></div>';
+    if (busy) h += feel + '<div class="bubble them typing new" aria-label="Assistant is typing"><i></i><i></i><i></i></div>';
     if (ended && !busy) {
       h += `<div class="handoff${later}"><b style="color:var(--maroon)">Need more support?</b><p>You can start a new chat with the assistant, or talk with a real counselor.</p>
         <div class="btns"><button type="button" class="btn btn-primary btn-sm" data-act="new">Start a new chat</button>
@@ -873,7 +1123,7 @@ function mountChat(root, id, full){
     ta.disabled = ended;
     ta.placeholder = ended ? 'This chat is closed. Start a new chat to continue.' : 'Type here. No names needed.';
     endBtn.disabled = busy || ended;
-    statusEl.textContent = busy ? 'Typing…' : 'Here to listen';
+    showMood(); talk(!!stream);
     statusEl.classList.toggle('busy', busy); avatarEl.classList.toggle('busy', busy);
     body.scrollTop = body.scrollHeight;
     if (stream) typeOut($('.bubble.streaming .txt', body), lastMsg.t, lastMsg.signoff ? esc(lastMsg.t) : md(lastMsg.t));
@@ -888,24 +1138,25 @@ function mountChat(root, id, full){
   });
   form.addEventListener('submit', e => { e.preventDefault(); const v = ta.value; if (!v.trim() || busy || ended) return; ta.value = ''; ta.style.height = ''; send(v); });
   ta.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey && !e.isComposing && matchMedia('(pointer:fine)').matches) { e.preventDefault(); form.requestSubmit(); } });
-  ta.addEventListener('input', () => { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 120) + 'px'; });
-  chatViews.add(draw); draw();
-  return { focus: () => ta.focus(), destroy: () => chatViews.delete(draw) };
+  ta.addEventListener('input', () => { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 120) + 'px'; hear(!!ta.value.trim()); });
+  chatViews.add(draw); mascotViews.add(showMood); draw();
+  return { focus: () => ta.focus(), destroy: () => { chatViews.delete(draw); mascotViews.delete(showMood); } };
 }
 
-function startThread(){
-  closeWidget();
+// The student's open anonymous chat, created (with a new alias) if they don't have one.
+function ensureThread(){
   const uid = studentId();
   let t = db.threads.find(x => x.uid === uid && x.open);
   if (!t) { t = {id:'t' + Date.now(), uid, alias:makeAlias(), sev:sev || 'LOW', peak:peak || sev || 'LOW', open:1, t:Date.now(), msgs:[]}; db.threads.push(t); save(); }
-  go('#/portal');
+  return t;
 }
+function startThread(){ closeWidget(); ensureThread(); go('#/portal'); }
 
 /* floating widget (every page except the full chat page) */
 function buildWidget(){
   $('#widget').innerHTML = `
     <div class="panel" id="panel" role="dialog" aria-label="GuidanceBridge assistant"><button class="min" id="panel-min" aria-label="Minimize chat" title="Minimize">${ICON.min}</button><div id="panel-chat" style="height:100%;min-height:0"></div></div>
-    <button class="fab" id="fab" aria-expanded="false" aria-controls="panel"><span class="wave" aria-hidden="true">💬</span> Talk to us</button>`;
+    <button class="fab" id="fab" aria-expanded="false" aria-controls="panel"><span class="fab-face" aria-hidden="true">${mascot('hello')}</span> Talk to us</button>`;
   const w = mountChat($('#panel-chat'), 'wchat', false);
   $('#fab').addEventListener('click', () => {
     const p = $('#panel'), open = !p.classList.contains('open');
@@ -918,9 +1169,11 @@ function buildWidget(){
 function closeWidget(){ const p = $('#panel'); if (p) { p.classList.remove('open'); document.body.classList.remove('wopen'); $('#fab').setAttribute('aria-expanded', 'false'); } }
 
 /* ============================ ANONYMOUS THREAD HELPERS ============================ */
+// A journal entry the student chose to share. Only images this page made itself (JPEG data URLs) are shown.
+const jAtt = j => `<span class="j-att"><b>📔 ${esc(j.title || 'Journal entry')}</b><small>Saved ${esc(fmtFull(j.saved))}${j.when ? ' · Happened ' + esc(fmtFull(j.when)) : ''}</small>${j.text ? `<span class="j-text">${esc(j.text)}</span>` : ''}${/^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(j.img || '') ? `<img src="${j.img}" alt="Screenshot shared by the student">` : ''}</span>`;
 function tm(el, t, role, intro){
   if (!el) return;
-  el.innerHTML = (intro || '') + (t.msgs.map(m => `<div class="bubble ${m.f === role ? 'me' : 'them'}">${esc(m.t)}<span class="cap">${m.f === 'admin' ? 'Counselor' : esc(t.alias)} · ${esc(fmt(m.at))}</span></div>`).join('') || (intro ? '' : '<div class="empty">No messages yet.</div>'));
+  el.innerHTML = (intro || '') + (t.msgs.map(m => `<div class="bubble ${m.f === role ? 'me' : 'them'}">${esc(m.t)}${m.j ? jAtt(m.j) : ''}<span class="cap">${m.f === 'admin' ? 'Counselor' : esc(t.alias)} · ${esc(fmt(m.at))}</span></div>`).join('') || (intro ? '' : '<div class="empty">No messages yet.</div>'));
   el.scrollTop = el.scrollHeight;
 }
 function post(id, f, text){
@@ -959,6 +1212,7 @@ const footer = () => `
           <li><a href="#/chat">Talk to the assistant</a></li>
           <li><a href="#/appointment">Book a counselor</a></li>
           <li><a href="#/portal">Anonymous chat</a></li>
+          <li><a href="#/journal">Private journal</a></li>
           <li><a href="#breathe" data-home="breathe">Breathing exercise</a></li>
         </ul>
       </div>`}
@@ -1018,10 +1272,11 @@ R.home = () => {
 
   <section class="block" id="support"><div class="wrap">
     <div class="hm-head reveal"><div class="hm-kicker">A bridge to support</div><h2>Support that starts with you.</h2><p>You choose how to begin. GuidanceBridge offers a calm first step and helps you reach the right human support.</p></div>
-    <div class="grid3">
+    <div class="grid3 grid4">
       <a class="card option-card reveal" href="#/chat"><div class="hm-ico">🌱</div><h3>Help in the first minute</h3><p>The assistant gives calming steps and flags whether your situation needs a counselor soon.</p><span class="go">Talk to the assistant →</span></a>
       <a class="card option-card reveal" href="#/portal"><div class="hm-ico">🛡️</div><h3>Your name stays yours</h3><p>Anonymous chat uses a random alias. Counselors see the alias, not your username.</p><span class="go">Start an anonymous chat →</span></a>
       <a class="card option-card reveal" href="#/appointment"><div class="hm-ico">🤝</div><h3>People decide, not AI</h3><p>The assistant never blames anyone or replaces a counselor. Urgent cases go to a human first.</p><span class="go">Book a face-to-face visit →</span></a>
+      <a class="card option-card reveal" href="#/journal"><div class="hm-ico">📔</div><h3>Keep your own record</h3><p>A passphrase-locked journal for notes and screenshots. It stays on this device unless you share an entry.</p><span class="go">Open your private journal →</span></a>
     </div>
   </div></section>
 
@@ -1216,6 +1471,187 @@ R.portal = () => {
   form.addEventListener('submit', e => { e.preventDefault(); post(t.id, 'student', ta.value); ta.value = ''; ta.style.height = ''; });
   ta.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey && !e.isComposing && matchMedia('(pointer:fine)').matches) { e.preventDefault(); form.requestSubmit(); } });
   ta.addEventListener('input', () => { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 120) + 'px'; });
+};
+
+/* ============================ PRIVATE JOURNAL / EVIDENCE LOCKER ============================ */
+// Notes and screenshots are encrypted in this browser with AES-GCM before they are saved. The key is made from
+// the student's passphrase (PBKDF2) and is only held in memory while the journal page is open, so nothing
+// readable is stored and nobody else can open it. A counselor sees an entry only if the student shares it,
+// which copies that one entry into the student's anonymous chat.
+const JN = {
+  ITER: 250000,
+  slot: uid => 'gb_journal:' + uid,
+  b64: u8 => { let s = ''; for (let i = 0; i < u8.length; i += 0x8000) s += String.fromCharCode.apply(null, u8.subarray(i, i + 0x8000)); return btoa(s); },
+  u8: s => Uint8Array.from(atob(s), c => c.charCodeAt(0)),
+  load: uid => { try { return JSON.parse(localStorage.getItem(JN.slot(uid))); } catch(e){ return null; } },
+  // Returns false when the browser refuses (storage full or blocked), so the page can say so instead of losing the entry.
+  store: (uid, data) => { try { localStorage.setItem(JN.slot(uid), JSON.stringify(data)); return true; } catch(e){ return false; } },
+  async key(pass, salt, iter){
+    const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pass), 'PBKDF2', false, ['deriveKey']);
+    return crypto.subtle.deriveKey({name:'PBKDF2', hash:'SHA-256', salt, iterations:iter}, base, {name:'AES-GCM', length:256}, false, ['encrypt', 'decrypt']);
+  },
+  async seal(key, bytes){ const iv = crypto.getRandomValues(new Uint8Array(12)); return {iv:JN.b64(iv), ct:JN.b64(new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM', iv}, key, bytes)))}; },
+  async open(key, x){ return new Uint8Array(await crypto.subtle.decrypt({name:'AES-GCM', iv:JN.u8(x.iv)}, key, JN.u8(x.ct))); },
+  sealJSON: (key, o) => JN.seal(key, new TextEncoder().encode(JSON.stringify(o))),
+  openJSON: async (key, x) => JSON.parse(new TextDecoder().decode(await JN.open(key, x))),
+  // Screenshots are scaled down and saved as JPEG so a handful of them fit in the browser's storage.
+  async shrink(file){
+    const bmp = await createImageBitmap(file), k = Math.min(1, 1280 / Math.max(bmp.width, bmp.height));
+    const c = document.createElement('canvas'); c.width = Math.max(1, Math.round(bmp.width * k)); c.height = Math.max(1, Math.round(bmp.height * k));
+    const g = c.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, c.width, c.height); g.drawImage(bmp, 0, 0, c.width, c.height);
+    const blob = await new Promise(r => c.toBlob(r, 'image/jpeg', .75));
+    return new Uint8Array(await blob.arrayBuffer());
+  },
+  url: bytes => 'data:image/jpeg;base64,' + JN.b64(bytes)
+};
+
+R.journal = () => {
+  const uid = studentId();
+  // Decrypted entries and the key live in these variables only, and are dropped when the student leaves the page.
+  let key = null, data = null, entries = [], shot = null;
+  cleanup = () => { key = null; data = null; entries = []; shot = null; };
+  const page = inner => { app.innerHTML = `<div class="narrow page-pad"><span class="eyebrow"><i></i> Private journal</span>${inner}</div>${footer()}`; };
+  const err = m => { const e = $('#j-err'); e.innerHTML = m ? `<div class="err" role="alert">${esc(m)}</div>` : ''; if (m) e.scrollIntoView({behavior:'smooth', block:'center'}); };
+  const FULL = 'This browser has no storage space left for the journal. Delete an older entry or screenshot and try again.';
+  if (!(window.crypto && crypto.subtle)) {
+    page(`<h1 class="page-h1">Your private journal</h1><div class="form-card"><p style="margin:0">The journal encrypts everything you write, and this browser only allows that on a secure (https) connection. Please open GuidanceBridge through its normal web address and try again.</p></div>`);
+    return;
+  }
+
+  // Locked: create a passphrase the first time, or enter it to open the journal.
+  function gate(){
+    key = null; entries = []; shot = null;
+    data = JN.load(uid);
+    const fresh = !data;
+    page(`<h1 class="page-h1">Your private journal</h1>
+      <p class="lead" style="font-size:1.05rem">Write down what happened and keep screenshots as evidence. Each entry is saved with its date and time, and locked with a passphrase only you know.</p>
+      <form class="form-card" id="j-gate" novalidate>
+        <div id="j-err"></div>
+        ${fresh ? `<ul class="j-facts">
+          <li><span class="ci">${ICON.lock}</span><span><b>Encrypted on this device.</b> Entries never leave this browser, and counselors cannot see them.</span></li>
+          <li><span class="ci">${ICON.clock}</span><span><b>Time-stamped automatically.</b> A clear record helps if you decide to ask for help later.</span></li>
+          <li><span class="ci">${ICON.share}</span><span><b>Shared only if you choose.</b> You can send a single entry to a counselor through your anonymous chat.</span></li>
+        </ul>` : ''}
+        <div class="field"><label class="f" for="j-pass">${fresh ? 'Create a passphrase' : 'Passphrase'}</label><input id="j-pass" type="password" autocomplete="${fresh ? 'new' : 'current'}-password" required>${fresh ? '<div class="hint">At least 6 characters. A short sentence is easy to remember.</div>' : ''}</div>
+        ${fresh ? '<div class="field"><label class="f" for="j-pass2">Type it again</label><input id="j-pass2" type="password" autocomplete="new-password" required></div>' : ''}
+        <button class="btn btn-primary btn-block" type="submit" id="j-go">${fresh ? 'Create my journal' : 'Unlock journal'}</button>
+        ${fresh ? '<p class="fine">There is no “forgot passphrase”. Without it, nobody can open the journal, not even a counselor.</p>'
+                : '<p class="switch">Forgot it? <button type="button" class="linkbtn" id="j-reset">Erase this journal and start over</button></p>'}
+      </form>`);
+    if (!fresh) $('#j-reset').onclick = () => {
+      if (!confirm('Erase the whole journal on this device? Every entry and screenshot in it will be deleted. This cannot be undone.')) return;
+      try { localStorage.removeItem(JN.slot(uid)); } catch(e){}
+      toast('Journal erased'); gate();
+    };
+    $('#j-gate').addEventListener('submit', async e => {
+      e.preventDefault();
+      const pass = $('#j-pass').value, btn = $('#j-go');
+      if (fresh && pass.length < 6) return err('The passphrase needs at least 6 characters.');
+      if (fresh && pass !== $('#j-pass2').value) return err('The two passphrases do not match.');
+      if (!pass) return err('Please enter your passphrase.');
+      btn.disabled = true; err('');
+      try {
+        if (fresh) {
+          const salt = crypto.getRandomValues(new Uint8Array(16));
+          const k = await JN.key(pass, salt, JN.ITER);
+          const d = {v:1, salt:JN.b64(salt), iter:JN.ITER, check:await JN.sealJSON(k, {ok:1}), entries:[]};
+          if (!JN.store(uid, d)) { btn.disabled = false; return err('This browser would not save the journal. Check that it is not in private browsing mode.'); }
+          key = k; data = d;
+        } else {
+          const k = await JN.key(pass, JN.u8(data.salt), data.iter);
+          try { await JN.openJSON(k, data.check); } catch(x){ btn.disabled = false; return err('That passphrase does not match. Please try again.'); }
+          const list = [];
+          for (const s of data.entries) list.push({...await JN.openJSON(k, s.body), id:s.id, img:s.img ? JN.url(await JN.open(k, s.img)) : ''});
+          key = k; entries = list;
+        }
+      } catch(x){ btn.disabled = false; return err('The journal could not be opened in this browser.'); }
+      if (location.hash.slice(2).split('?')[0] === 'journal') locker();
+    });
+  }
+
+  // Unlocked: add an entry, and read, share or delete saved ones.
+  function locker(){
+    page(`<div class="j-head"><h1 class="page-h1">Your private journal</h1><button class="btn btn-outline btn-sm" id="j-lock" type="button">Lock journal</button></div>
+      <p class="muted" style="margin-bottom:24px">Unlocked on this device only. It locks again when you leave this page.</p>
+      <form class="form-card" id="j-form" novalidate>
+        <div id="j-err"></div>
+        <div class="row2">
+          <div class="field"><label class="f" for="j-title">Title <span class="opt">(optional)</span></label><input id="j-title" type="text" maxlength="80" placeholder="e.g. Group chat, Monday"></div>
+          <div class="field"><label class="f" for="j-when">When it happened <span class="opt">(optional)</span></label><input id="j-when" type="datetime-local"></div>
+        </div>
+        <div class="field"><label class="f" for="j-text">What happened?</label><textarea id="j-text" rows="5" maxlength="4000" placeholder="Write it in your own words. You don't need to name anyone."></textarea></div>
+        <div class="field j-pick">
+          <input class="sr" type="file" id="j-file" accept="image/*"><label class="btn btn-outline btn-sm" for="j-file">Add a screenshot or photo</label>
+          <span class="hint" id="j-fname">Optional. One image per entry.</span>
+          <div class="j-preview" id="j-preview" hidden></div>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit" id="j-save">Save to journal</button>
+        <p class="fine">The date and time are added for you. This is your own record, not a formal report.</p>
+      </form>
+      <div class="j-list" id="j-list"></div>`);
+    $('#j-when').max = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+    $('#j-lock').onclick = () => { gate(); toast('Journal locked'); };
+    const clearShot = () => { shot = null; $('#j-file').value = ''; $('#j-preview').hidden = true; $('#j-preview').innerHTML = ''; $('#j-fname').textContent = 'Optional. One image per entry.'; };
+    $('#j-file').addEventListener('change', async e => {
+      const file = e.target.files[0]; if (!file) return;
+      err('');
+      if (!file.type.startsWith('image/') || file.size > 15 * 1024 * 1024) { clearShot(); return err('Please choose an image file smaller than 15 MB.'); }
+      try { shot = await JN.shrink(file); } catch(x){ clearShot(); return err('That image could not be read. Try a PNG or JPEG screenshot.'); }
+      if (!$('#j-preview')) return;
+      $('#j-fname').textContent = file.name;
+      $('#j-preview').innerHTML = `<img src="${JN.url(shot)}" alt="Screenshot to be saved"><button type="button" class="linkbtn" id="j-unpick">Remove image</button>`;
+      $('#j-preview').hidden = false;
+      $('#j-unpick').onclick = clearShot;
+    });
+    $('#j-form').addEventListener('submit', async e => {
+      e.preventDefault();
+      const title = $('#j-title').value.trim(), text = $('#j-text').value.trim(), when = Date.parse($('#j-when').value) || 0;
+      if (!text && !shot) return err('Write a note or add a screenshot first.');
+      if (when > Date.now() + 60000) return err('“When it happened” cannot be in the future.');
+      const btn = $('#j-save'); btn.disabled = true; err('');
+      const body = {title, text, when, at:Date.now(), shared:0}, id = 'j' + body.at;
+      const saved = {id, body:await JN.sealJSON(key, body)};
+      if (shot) saved.img = await JN.seal(key, shot);
+      data.entries.unshift(saved);
+      if (!JN.store(uid, data)) { data.entries.shift(); btn.disabled = false; return err(FULL); }
+      entries.unshift({...body, id, img:shot ? JN.url(shot) : ''});
+      e.target.reset(); clearShot(); btn.disabled = false;
+      draw(); toast('Saved to your journal');
+    });
+    $('#j-list').addEventListener('click', async e => {
+      const img = e.target.closest('.j-img'); if (img) return img.classList.toggle('big');
+      const b = e.target.closest('button[data-act]'); if (!b) return;
+      const x = entries.find(y => y.id === b.dataset.id), i = data.entries.findIndex(y => y.id === b.dataset.id);
+      if (!x || i < 0) return;
+      if (b.dataset.act === 'del') {
+        if (!confirm('Delete this journal entry? This cannot be undone.' + (x.shared ? '\n\nThe copy you shared with a counselor stays in your chat.' : ''))) return;
+        const [gone] = data.entries.splice(i, 1);
+        if (!JN.store(uid, data)) { data.entries.splice(i, 0, gone); return toast('Could not delete the entry'); }
+        entries.splice(entries.indexOf(x), 1); draw(); toast('Entry deleted');
+      } else {
+        if (!confirm('Share this entry with a guidance counselor?\n\nA copy goes into your anonymous chat. The counselor sees your alias, not your name. Once shared, the copy cannot be taken back.')) return;
+        const t = ensureThread();
+        t.msgs.push({f:'student', t:'Shared from my private journal', at:Date.now(), j:{title:x.title, text:x.text, when:x.when, saved:x.at, img:x.img}});
+        try { localStorage.setItem(KEY, JSON.stringify(db)); } catch(q){ t.msgs.pop(); return toast('Not enough storage space to share this entry'); }
+        x.shared = Date.now();
+        const {id, img:_, ...body} = x;
+        data.entries[i].body = await JN.sealJSON(key, body); JN.store(uid, data);
+        draw(); toast('Shared with a counselor as ' + t.alias);
+      }
+    });
+    draw();
+  }
+  function draw(){
+    const l = $('#j-list'); if (!l) return;
+    l.innerHTML = `<h2>Saved entries${entries.length ? ` (${entries.length})` : ''}</h2>` + (entries.map(x => `<article class="case-card j-entry">
+        <div class="j-top"><h3>${esc(x.title || 'Journal entry')}</h3><span class="badge ${x.shared ? 'ok' : 'stat'}">${x.shared ? 'Shared ' + esc(fmt(x.shared)) : 'Only you can see this'}</span></div>
+        <p class="j-when">Saved ${esc(fmtFull(x.at))}${x.when ? ' · Happened ' + esc(fmtFull(x.when)) : ''}</p>
+        ${x.text ? `<div class="j-text">${esc(x.text)}</div>` : ''}
+        ${x.img ? `<img class="j-img" src="${x.img}" alt="Saved screenshot" title="Click to enlarge">` : ''}
+        <div class="d-actions"><button class="btn btn-outline btn-sm" type="button" data-act="share" data-id="${esc(x.id)}">${x.shared ? 'Share again' : 'Share with a counselor'}</button>${x.shared ? '<a class="btn btn-outline btn-sm" href="#/portal">Open my chat</a>' : ''}<button class="btn btn-danger btn-sm" type="button" data-act="del" data-id="${esc(x.id)}">Delete</button></div>
+      </article>`).join('') || '<div class="empty">Nothing saved yet. Your first entry will appear here.</div>');
+  }
+  gate();
 };
 
 R.dashboard = () => {
@@ -1481,9 +1917,9 @@ R.admin = () => auth('admin');
 R.out = () => { SS.del('gb_me'); go('#/'); };
 
 /* ============================ ROUTER + BOOT ============================ */
-const TITLES = {home:'UPHSD Guidance Services', chat:'Talk to the assistant', appointment:'Book a counselor', portal:'Anonymous chat', dashboard:'Triage dashboard', request:'Appointment request', thread:'Anonymous chat (counselor)', login:'Student sign in', admin:'Counselor portal'};
+const TITLES = {home:'UPHSD Guidance Services', chat:'Talk to the assistant', appointment:'Book a counselor', portal:'Anonymous chat', journal:'Private journal', dashboard:'Triage dashboard', request:'Appointment request', thread:'Anonymous chat (counselor)', login:'Student sign in', admin:'Counselor portal'};
 // Students and counselors get separate experiences: separate menus, footers and pages.
-const STUDENT_VIEWS = ['home', 'chat', 'appointment', 'portal', 'login'];
+const STUDENT_VIEWS = ['home', 'chat', 'appointment', 'portal', 'journal', 'login'];
 const isStaff = () => { const u = me(); return !!u && u.role === 'admin'; };
 function renderNav(p){
   const u = me(), staff = isStaff();
@@ -1491,7 +1927,7 @@ function renderNav(p){
   const a = ([k, l]) => `<a href="#/${k}"${p === k ? ' class="on" aria-current="page"' : ''}>${l}</a>`;
   const links = staff
     ? a(['dashboard', 'Triage dashboard']) + `<a href="#/out">Sign out (${esc(u.name)})</a>`
-    : [['chat','AI chat'], ['appointment','Book a counselor'], ['portal','Anonymous chat']].map(a).join('')
+    : [['chat','AI chat'], ['appointment','Book a counselor'], ['portal','Anonymous chat'], ['journal','Private journal']].map(a).join('')
       + '<a href="#/" id="nav-contact">Contact us</a>'
       + (u ? `<a href="#/out">Sign out (${esc(u.name)})</a>` : '');
   $('#nav').innerHTML = `

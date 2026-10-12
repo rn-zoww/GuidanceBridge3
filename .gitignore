@@ -1,0 +1,19 @@
+# Secrets: never commit real keys. Locally the key lives in %USERPROFILE%\.guidancebridge\.env;
+# on Vercel it is set under Project → Settings → Environment Variables.
+.env
+.env.local
+.env.*.local
+*.env
+!.env.example
+
+# Runtime files
+server.log
+server.pid
+
+# Dependencies / build / tooling
+node_modules/
+.vercel/
+
+# OS / editor
+.DS_Store
+Thumbs.db
